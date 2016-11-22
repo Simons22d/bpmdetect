@@ -11,8 +11,8 @@ import matplotlib.pyplot as plt
 
 
 def read_wav(filename):
-    song = wave.open(filename,'rb')
+    song = wave.open(filename,'r')
     frames = song.getnframes();
-    fs = song.getframerate()
-    samps = list(array.array('i',song.readframes(nsamps)))
-    return samps, fs
+    fps = song.getframerate()
+    samps = list(array.array('i',song.readframes(frames)))
+    return samps, fps
