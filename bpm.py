@@ -2,7 +2,6 @@ import wave
 import math
 import time
 import sys
-import pywt
 import array
 import numpy
 import argparse
@@ -12,7 +11,11 @@ import matplotlib.pyplot as plt
 
 def read_wav(filename):
     song = wave.open(filename,'r')
-    frames = song.getnframes();
+    frames = song.getnframes()
     fps = song.getframerate()
     samps = list(array.array('i',song.readframes(frames)))
-    return samps, fps
+    print samps
+    #return samps, fps
+
+
+print read_wav("song.wav")
